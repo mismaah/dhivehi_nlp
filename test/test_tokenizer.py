@@ -1,5 +1,5 @@
 import unittest
-import tokenizer
+from dhivehi_nlp import tokenizer
 
 class test_tokenizer(unittest.TestCase):
     def test_sentence_tokenizer(self):
