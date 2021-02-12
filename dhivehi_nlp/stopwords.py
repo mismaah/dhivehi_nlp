@@ -2,7 +2,7 @@
   ލިޔުމުގައިވާ ބަސްތަކުގެ ތެރެއިން ލިޔުމުގެ މާނައަށް ބަދަލުނުގެންނަ ބަސްތައް ނެގުމަށްފަހު ބާކީހުރި ބަސްތައް އަނބުރާދިނުން
 """
 
-import tokenizer
+from dhivehi_nlp import tokenizer
 
 def get_stopwords():
     """
@@ -11,9 +11,6 @@ def get_stopwords():
     """
     return [
         "އަދި",
-        "",
-        "",
-        "",
     ]
 
 def remove_stopwords(text):
