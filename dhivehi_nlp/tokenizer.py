@@ -31,7 +31,7 @@ def word_tokenize(text, removePunctuation=False, removeNonDhivehiNumeric=False):
     for sentence in sentences:
         for token in sentence.split():
             if removeNonDhivehiNumeric:
-                token = re.sub(r'[^\u0780-\u07B1-9]+', '', token)
+                token = re.sub(r'[^\u0780-\u07B10-9]+', '', token)
             if not removeNonDhivehiNumeric and removePunctuation:
                 token = re.sub(r'[.(),\'\"?؟:;،]+', '', token)
             if token == "":
