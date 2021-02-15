@@ -4,6 +4,7 @@
 
 from dhivehi_nlp import tokenizer
 
+
 def get_stopwords():
     """
     Returns a list of stopwords.
@@ -12,6 +13,7 @@ def get_stopwords():
     return [
         "އަދި",
     ]
+
 
 def remove_stopwords(text):
     """
