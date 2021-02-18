@@ -1,7 +1,21 @@
+"""Create language models to predict future additions. Language models will give
+probability based on selected ngram. An ngram is contiguous sequence of n tokens
+from the given input text.
+
+         ދީފައިވާ ލިޔުމުގައިވާ ބަސްތަކަށް ބެލުމަށްފަހު ފަހުން މިލިޔުމަށް އައިސްދާނެ ބަސްތައް ލަފާކުރާނެ މޮޑެލްއެއް އުފެއްދުން 
+"""
+
 from dhivehi_nlp import tokenizer
 
 
 def ngrams(text, n):
+    """
+    Returns a dictionary of the ngrams in the text along with their count.
+    The ngram is based on the n value provided. If n = 1, the resulting dict
+    will have unigrams. If n = 2, bigrams and so on.
+    
+           އެންގްރާމް ތަކުގެ ޑިކްށަނަރީއެއް އަނބުރާދޭނެއެވެ. މީގައި އެންގްރާމް ލިޔުމުން ފެނުނު އަދަދު ވެސް ހުންނާނެއެވެ
+    """
     if n == 1:
         grams = tokenizer.word_tokenize(text, removePunctuation=True)
     else:
@@ -19,16 +33,15 @@ def ngrams(text, n):
         grams_counted.append(counted)
     return grams_counted
 
-
-def unigrams(text):
-    return ngrams(text, 1)
-
-
-def bigrams(text):
-    return ngrams(text, 2)
-
-
 def model(text, n):
+    """
+    Returns a dictionary of a word or phrase in the text and the probability
+    of the of the word or phrase appearing in the text.
+    The ngram is based on the n value provided. If n = 1, the resulting dict
+    will have unigrams. If n = 2, bigrams and so on.
+
+                ބަހެެއް ނުވަތަ ބަސްތަކެއް ލިޔުމުން ފެންނާނެ ކަމުގެ ޕްރޮބަބިލިޓީ ތަކުގެ ޑިކްށަނަރީއެއް އަނބުރާދޭނެއެވެ
+    """
     probabilities = []
     if n == 1:
         grams = ngrams(text, 1)
