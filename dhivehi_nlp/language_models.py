@@ -33,6 +33,7 @@ def ngrams(text, n):
         grams_counted.append(counted)
     return grams_counted
 
+
 def model(text, n):
     """
     Returns a dictionary of a word or phrase in the text and the probability
