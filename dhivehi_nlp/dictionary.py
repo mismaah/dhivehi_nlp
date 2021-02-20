@@ -1,3 +1,9 @@
+"""Get definitions definitions of Dhivehi words and the word list. Definitions
+obtained from radheef.mv. 
+
+                                                    ބަސްތަކުގެ ލިސްޓާއި ބަސްތަކުގެ މާނަ ހޯދުން
+"""
+
 import sqlite3
 
 
@@ -7,6 +13,10 @@ def db_connect(db_path="./dhivehi_nlp/radheef.db"):
 
 
 def get_definition(word):
+    """Returns meaning of word.
+
+                                                             ބަހުގެ މާނަ އަނބުރާ ދޭނެއެވެ
+    """
     con = db_connect()
     cursor = con.cursor()
     query = f"SELECT definition FROM radheef WHERE word='{word}'"
@@ -19,6 +29,10 @@ def get_definition(word):
 
 
 def get_wordlist():
+    """Returns a list of all the Dhivehi words in the radheef (dictionary).
+
+                                                  ހުރިހާ ބަސްތަކެއްގެ ލިސްޓެއް އަނބުރާ ދޭނެއެވެ
+    """
     con = db_connect()
     cursor = con.cursor()
     query = "SELECT word FROM radheef"
