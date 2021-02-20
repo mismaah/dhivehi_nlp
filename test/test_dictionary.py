@@ -2,7 +2,7 @@ import unittest
 from dhivehi_nlp import dictionary
 
 
-class test_tokenizer(unittest.TestCase):
+class test_dictionary(unittest.TestCase):
     def test_get_definion(self):
         self.assertEqual(dictionary.get_definition("ހަހަރުވެތުން"), "މ. ލޯބިކުރުން.")
 

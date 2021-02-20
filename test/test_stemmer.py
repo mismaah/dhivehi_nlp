@@ -2,7 +2,7 @@ import unittest
 from dhivehi_nlp import stemmer
 
 
-class test_tokenizer(unittest.TestCase):
+class test_stemmer(unittest.TestCase):
     def test_stemmer_one_word_0(self):
         self.assertEqual(stemmer.stem("ކަމެއްކަން"), "ކަމެއް")
 

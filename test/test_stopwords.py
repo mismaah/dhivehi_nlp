@@ -2,7 +2,7 @@ import unittest
 from dhivehi_nlp import stopwords
 
 
-class test_tokenizer(unittest.TestCase):
+class test_stopwords(unittest.TestCase):
     def test_stopwords(self):
         self.assertEqual(
             stopwords.remove_stopwords("ބުނެފައި އަދި އިތުރު"), ["ބުނެފައި", "އިތުރު"]

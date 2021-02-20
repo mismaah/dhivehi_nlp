@@ -2,7 +2,7 @@ import unittest
 from dhivehi_nlp import language_models
 
 
-class test_tokenizer(unittest.TestCase):
+class test_language_models(unittest.TestCase):
     def test_ngrams_one_sentence(self):
         text = ".ބުނެފައި އަދި އިތުރު"
         self.assertCountEqual(
