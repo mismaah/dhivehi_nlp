@@ -7,7 +7,7 @@ obtained from radheef.mv.
 import sqlite3
 
 
-def db_connect(db_path="./dhivehi_nlp/radheef.db"):
+def db_connect(db_path="./store/dhivehi_nlp.db"):
     con = sqlite3.connect(db_path)
     return con
 
