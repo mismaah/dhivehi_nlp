@@ -51,7 +51,7 @@ def get_stopwords():
     ]
 
 
-def remove_stopwords(text):
+def remove_stopwords(text: str):
     """
     Returns a list of tokens from the input text after removing the stopwords.
 

@@ -12,7 +12,7 @@ def db_connect(db_path="./store/dhivehi_nlp.db"):
     return con
 
 
-def get_definition(word):
+def get_definition(word: str):
     """Returns meaning of word.
 
                                                              ބަހުގެ މާނަ އަނބުރާ ދޭނެއެވެ

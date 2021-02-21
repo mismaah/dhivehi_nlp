@@ -11,7 +11,7 @@ def db_connect(db_path="./store/dhivehi_nlp.db"):
     return con
 
 
-def db_read(name):
+def db_read(name: str) -> str:
     con = db_connect()
     cursor = con.cursor()
     query = f"SELECT content FROM corpus WHERE name='{name}'"

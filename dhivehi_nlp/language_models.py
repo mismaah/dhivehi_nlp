@@ -8,7 +8,7 @@ from the given input text.
 from dhivehi_nlp import tokenizer
 
 
-def ngrams(text, n):
+def ngrams(text: str, n: int):
     """
     Returns a dictionary of the ngrams in the text along with their count.
     The ngram is based on the n value provided. If n = 1, the resulting dict
@@ -34,7 +34,7 @@ def ngrams(text, n):
     return grams_counted
 
 
-def model(text, n):
+def model(text: str, n: int):
     """
     Returns a dictionary of a word or phrase in the text and the probability
     of the of the word or phrase appearing in the text.
