@@ -3,7 +3,7 @@ consecutive letters, place in a set where the order doesn't matter and
 duplicates are removed. Used to find string matches even if certain characters
 are different, based on similarity value.
 
-                                         ލިޔުނު އަކުރުތަކާ ނުވަތަ ބަސްތަކާއި އެއްގޮތް ބަސްތައް ހޯދުން
+ލިޔުނު އަކުރުތަކާ ނުވަތަ ބަސްތަކާއި އެއްގޮތް ބަސްތައް ހޯދުން
 """
 
 import re
@@ -16,7 +16,7 @@ def generate_trigrams(text: str):
     Preprocessing is done where each space is changed to two spaces. Also, two
     spaces to the beginning and one space to the end of the string are added.
 
-                         ލިޔެފައިވާ ބަހުގެ ނުވަތަ ބަސްތަކުގެ ޓްރައިގްރާމްތައް ސެޓެއްގެ ގޮތުގައި އަނބުރާ ދޭނެއެވެ
+    ލިޔެފައިވާ ބަހުގެ ނުވަތަ ބަސްތަކުގެ ޓްރައިގްރާމްތައް ސެޓެއްގެ ގޮތުގައި އަނބުރާ ދޭނެއެވެ
     
     >>> generate_trigrams("ބަޔަކު")
     {
@@ -58,7 +58,7 @@ def get_similarity(query: str, text=None, max_output=10):
     The max_output keyword argument determines the size of the return list and
     is set to 10 by default if argument is not given.
 
-                      ލިޔުނު ބަހާއި އެއްގޮތް ބަސްތައް އެއްގޮތްވާ ނިސްބަތުން ލިސްޓެއް ގޮތުގައި އަނބުރާ ދޭނެއެވެ
+    ލިޔުނު ބަހާއި އެއްގޮތް ބަސްތައް އެއްގޮތްވާ ނިސްބަތުން ލިސްޓެއް ގޮތުގައި އަނބުރާ ދޭނެއެވެ
     
     >>> get_similarity("ބަޔަކު", max_output=5)
     [

@@ -2,7 +2,7 @@
 probability based on selected ngram. An ngram is contiguous sequence of n tokens
 from the given input text.
 
-         ދީފައިވާ ލިޔުމުގައިވާ ބަސްތަކަށް ބެލުމަށްފަހު ފަހުން މިލިޔުމަށް އައިސްދާނެ ބަސްތައް ލަފާކުރާނެ މޮޑެލްއެއް އުފެއްދުން 
+ދީފައިވާ ލިޔުމުގައިވާ ބަސްތަކަށް ބެލުމަށްފަހު ފަހުން މިލިޔުމަށް އައިސްދާނެ ބަސްތައް ލަފާކުރާނެ މޮޑެލްއެއް އުފެއްދުން 
 """
 
 from dhivehi_nlp import tokenizer
@@ -14,7 +14,7 @@ def ngrams(text: str, n: int):
     The ngram is based on the n value provided. If n = 1, the resulting dict
     will have unigrams. If n = 2, bigrams and so on.
     
-           އެންގްރާމް ތަކުގެ ޑިކްށަނަރީއެއް އަނބުރާދޭނެއެވެ. މީގައި އެންގްރާމް ލިޔުމުން ފެނުނު އަދަދު ވެސް ހުންނާނެއެވެ
+    އެންގްރާމް ތަކުގެ ޑިކްށަނަރީއެއް އަނބުރާދޭނެއެވެ. މީގައި އެންގްރާމް ލިޔުމުން ފެނުނު އަދަދު ވެސް ހުންނާނެއެވެ
     
     >>> text = "ބުނެފައި އަދި އިތުރު. ބުނެފައި އަދި އިތުރުކަމެއް"
     >>> ngrams(text, 2)
@@ -49,7 +49,7 @@ def model(text: str, n: int):
     The ngram is based on the n value provided. If n = 1, the resulting dict
     will have unigrams. If n = 2, bigrams and so on.
 
-                ބަހެެއް ނުވަތަ ބަސްތަކެއް ލިޔުމުން ފެންނާނެ ކަމުގެ ޕްރޮބަބިލިޓީ ތަކުގެ ޑިކްށަނަރީއެއް އަނބުރާދޭނެއެވެ
+    ބަހެެއް ނުވަތަ ބަސްތަކެއް ލިޔުމުން ފެންނާނެ ކަމުގެ ޕްރޮބަބިލިޓީ ތަކުގެ ޑިކްށަނަރީއެއް އަނބުރާދޭނެއެވެ
     
     >>> text = "ބުނެފައި އަދި އިތުރު. ބުނެފައި އަދި އިތުރުކަމެއް"
     >>> model(text, 3)

@@ -1,7 +1,7 @@
 """Get definitions definitions of Dhivehi words and the word list. Definitions
 obtained from radheef.mv. 
 
-                                                    ބަސްތަކުގެ ލިސްޓާއި ބަސްތަކުގެ މާނަ ހޯދުން
+ބަސްތަކުގެ ލިސްޓާއި ބަސްތަކުގެ މާނަ ހޯދުން
 """
 
 import sqlite3
@@ -15,7 +15,7 @@ def _db_connect(db_path="./store/dhivehi_nlp.db"):
 def get_definition(word: str) -> str:
     """Returns meaning of word.
 
-                                                             ބަހުގެ މާނަ އަނބުރާ ދޭނެއެވެ
+    ބަހުގެ މާނަ އަނބުރާ ދޭނެއެވެ
     
     >>> get_definition('ތަންވަޅު')
     'ނ. 1 ދަނޑިވަޅު. 2 ފުރުޞަތު. 3 ވަގުތު.'
@@ -34,7 +34,7 @@ def get_definition(word: str) -> str:
 def get_wordlist():
     """Returns a list of all the Dhivehi words in the radheef (dictionary).
 
-                                                  ހުރިހާ ބަސްތަކެއްގެ ލިސްޓެއް އަނބުރާ ދޭނެއެވެ
+    ހުރިހާ ބަސްތަކެއްގެ ލިސްޓެއް އަނބުރާ ދޭނެއެވެ
     """
     con = _db_connect()
     cursor = con.cursor()

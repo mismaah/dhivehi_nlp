@@ -1,6 +1,6 @@
 """Tokenize text into separate sentences or words (tokens).
 
-                                        ލިޔުމުގައިވާ ޖުމުލަތަކަށް ނުވަތަ ބަސްތަކަށް އެ ލިޔުން ވަކިކުރުން
+ލިޔުމުގައިވާ ޖުމުލަތަކަށް ނުވަތަ ބަސްތަކަށް އެ ލިޔުން ވަކިކުރުން
 """
 
 import re
@@ -11,8 +11,8 @@ def sentence_tokenize(text: str):
     Returns a list where the text is split into separate sentences with
     preceding and succeeding whitespaces removed.
 
-              ލިޔުމުގައިވާ ޖުމުލަތަކަށް ލިޔުން ވަކިކޮށް އަދި ފެށޭއިރާއި ނިމޭއިރު ހުންނަ ހުސްތަން ނެގުމަށްފަހު ލިސްޓެއް
-                                                                      އަނބުރާދޭނެއެވެ
+    ލިޔުމުގައިވާ ޖުމުލަތަކަށް ލިޔުން ވަކިކޮށް އަދި ފެށޭއިރާއި ނިމޭއިރު ހުންނަ ހުސްތަން ނެގުމަށްފަހު ލިސްޓެއް
+    އަނބުރާދޭނެއެވެ
     
     >>> sentence_tokenize("ބުނެފަ އެވެ. އިތުރަށް ހާމައެއް ނުކުރެ އެވެ")
     ["ބުނެފަ އެވެ", "އިތުރަށް ހާމައެއް ނުކުރެ އެވެ"]
@@ -32,7 +32,7 @@ def word_tokenize(text: str, removePunctuation=False, removeNonDhivehiNumeric=Fa
     Keyword argument removeNonDhivehiNumeric can be passed to remove characters
     other than thaana (unicode range 0780 to 07B1) and numbers (0-9).
     
-                                      ލިޔުމުގައިވާ ބަސްތަކަށް ލިޔުން ވަކިކޮށް ލިސްޓެއް އަނބުރާދޭނެއެވެ
+    ލިޔުމުގައިވާ ބަސްތަކަށް ލިޔުން ވަކިކޮށް ލިސްޓެއް އަނބުރާދޭނެއެވެ
     
     >>> word_tokenize("ބުނެފަ އެވެ. އިތުރަށް ހާމައެއް ނުކުރެ އެވެ")
     ["ބުނެފަ", "އެވެ", "އިތުރަށް", "ހާމައެއް", "ނުކުރެ", "އެވެ"],
