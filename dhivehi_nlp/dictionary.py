@@ -7,17 +7,20 @@ obtained from radheef.mv.
 import sqlite3
 
 
-def db_connect(db_path="./store/dhivehi_nlp.db"):
+def _db_connect(db_path="./store/dhivehi_nlp.db"):
     con = sqlite3.connect(db_path)
     return con
 
 
-def get_definition(word: str):
+def get_definition(word: str) -> str:
     """Returns meaning of word.
 
                                                              ބަހުގެ މާނަ އަނބުރާ ދޭނެއެވެ
+    
+    >>> get_definition('ތަންވަޅު')
+    'ނ. 1 ދަނޑިވަޅު. 2 ފުރުޞަތު. 3 ވަގުތު.'
     """
-    con = db_connect()
+    con = _db_connect()
     cursor = con.cursor()
     query = f"SELECT definition FROM radheef WHERE word='{word}'"
     cursor.execute(query)
@@ -33,7 +36,7 @@ def get_wordlist():
 
                                                   ހުރިހާ ބަސްތަކެއްގެ ލިސްޓެއް އަނބުރާ ދޭނެއެވެ
     """
-    con = db_connect()
+    con = _db_connect()
     cursor = con.cursor()
     query = "SELECT word FROM radheef"
     cursor.execute(query)

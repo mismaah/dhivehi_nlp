@@ -48,6 +48,11 @@ def stem(text):
     return value is a string. Otherwise a list is returned.
 
                      ބަހުގެ ކުރީގައި ނުވަތަ ފަހަތުގައި ވާ އަކުރުތައް ނެގުމަށްފަހު ބަހުގެ އަސްލުގޮތް އަނބުރާ ދިނުން
+    
+    >>> stem("އެކައްޗެއް")
+    "އެކަތި"
+    >>> stem(["ކަމެއްކަން", "ކަމެއްކަމަކީ", "ކަމެއްކަމުން", "ބަހެއް", "ގަހެއް", "އެކައްޗެއް"])
+    ["ކަމެއް", "ކަމެއް", "ކަމެއް", "ބަސް", "ގަސް", "އެކަތި"]
     """
     if isinstance(text, str):
         tokens = tokenizer.word_tokenize(text, removePunctuation=True)

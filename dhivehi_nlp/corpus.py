@@ -6,13 +6,13 @@
 import sqlite3
 
 
-def db_connect(db_path="./store/dhivehi_nlp.db"):
+def _db_connect(db_path="./store/dhivehi_nlp.db"):
     con = sqlite3.connect(db_path)
     return con
 
 
-def db_read(name: str) -> str:
-    con = db_connect()
+def _db_read(name: str) -> str:
+    con = _db_connect()
     cursor = con.cursor()
     query = f"SELECT content FROM corpus WHERE name='{name}'"
     cursor.execute(query)
@@ -26,7 +26,7 @@ def news():
 
                                                              ސަން އެމްވީގެ ނޫސް ހަބަރެއް
     """
-    return db_read("news")
+    return _db_read("news")
 
 
 def story():
@@ -34,7 +34,7 @@ def story():
 
                                                          އައިޝަތު އަފްރާގެ ކުރުވާހަކަ ރެހެނދި
     """
-    return db_read("story")
+    return _db_read("story")
 
 
 def tweet():
@@ -42,7 +42,7 @@ def tweet():
 
                                                                            ޓްވީޓެއް
     """
-    return db_read("tweet")
+    return _db_read("tweet")
 
 
 def lyrics():
@@ -50,7 +50,7 @@ def lyrics():
 
                                                      ހުސެން އަލީގެ ހިނގާ ހޯދަމާހޭ ލަވައިގެ ޅެން
     """
-    return db_read("lyrics")
+    return _db_read("lyrics")
 
 
 def textbook():
@@ -59,4 +59,4 @@ def textbook():
 
                                                  ދިވެހި 3 (ށ) މުދައްރިސުންގެ ފޮތުން ތަންކޮޅެއް
     """
-    return db_read("textbook")
+    return _db_read("textbook")

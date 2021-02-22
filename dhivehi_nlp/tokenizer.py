@@ -13,6 +13,9 @@ def sentence_tokenize(text: str):
 
               ލިޔުމުގައިވާ ޖުމުލަތަކަށް ލިޔުން ވަކިކޮށް އަދި ފެށޭއިރާއި ނިމޭއިރު ހުންނަ ހުސްތަން ނެގުމަށްފަހު ލިސްޓެއް
                                                                       އަނބުރާދޭނެއެވެ
+    
+    >>> sentence_tokenize("ބުނެފަ އެވެ. އިތުރަށް ހާމައެއް ނުކުރެ އެވެ")
+    ["ބުނެފަ އެވެ", "އިތުރަށް ހާމައެއް ނުކުރެ އެވެ"]
     """
     sentences = text.split(".")
     sentences = [i.strip() for i in sentences if i]
@@ -30,6 +33,15 @@ def word_tokenize(text: str, removePunctuation=False, removeNonDhivehiNumeric=Fa
     other than thaana (unicode range 0780 to 07B1) and numbers (0-9).
     
                                       ލިޔުމުގައިވާ ބަސްތަކަށް ލިޔުން ވަކިކޮށް ލިސްޓެއް އަނބުރާދޭނެއެވެ
+    
+    >>> word_tokenize("ބުނެފަ އެވެ. އިތުރަށް ހާމައެއް ނުކުރެ އެވެ")
+    ["ބުނެފަ", "އެވެ", "އިތުރަށް", "ހާމައެއް", "ނުކުރެ", "އެވެ"],
+
+    >>> word_tokenize("އިތުlރު ހާމައެއް test 112 ނުކުރެ? އެވެ", removeNonDhivehiNumeric=True)
+    ["އިތުރު", "ހާމައެއް", "112", "ނުކުރެ", "އެވެ"]
+
+    >>> tokenizer.word_tokenize("މާފަ ބުނެފަ އެވެ. އިތުރު 112 ހާމައެއް، ނުކުރެ؟? އެވެ.", removePunctuation=True)
+    ["މާފަ", "ބުނެފަ", "އެވެ", "އިތުރު", "112", "ހާމައެއް", "ނުކުރެ", "އެވެ"]
     """
     sentences = sentence_tokenize(text)
     tokens = []

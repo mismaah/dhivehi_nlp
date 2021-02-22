@@ -56,6 +56,9 @@ def remove_stopwords(text: str):
     Returns a list of tokens from the input text after removing the stopwords.
 
                          ލިޔުމުގައިވާ ސްޓޮޕްވާޑް ނެގުމަށްފަހު ބާކީހުރި ބަސްތައް ލިސްޓެއް ގޮތަށް އަނބުރާދޭނެއެވެ
+    
+    >>> remove_stopwords("ބުނެފައި އަދި އިތުރު")
+    ["ބުނެފައި", "އިތުރު"]
     """
     tokens = tokenizer.word_tokenize(text, removePunctuation=True)
     stopwords = get_stopwords()

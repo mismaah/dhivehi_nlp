@@ -15,6 +15,14 @@ def ngrams(text: str, n: int):
     will have unigrams. If n = 2, bigrams and so on.
     
            އެންގްރާމް ތަކުގެ ޑިކްށަނަރީއެއް އަނބުރާދޭނެއެވެ. މީގައި އެންގްރާމް ލިޔުމުން ފެނުނު އަދަދު ވެސް ހުންނާނެއެވެ
+    
+    >>> text = "ބުނެފައި އަދި އިތުރު. ބުނެފައި އަދި އިތުރުކަމެއް"
+    >>> ngrams(text, 2)
+    [
+        {"gram": ("ބުނެފައި", "އަދި"), "count": 2},
+        {"gram": ("އަދި", "އިތުރު"), "count": 1},
+        {"gram": ("އަދި", "އިތުރުކަމެއް"), "count": 1},
+    ]
     """
     if n == 1:
         grams = tokenizer.word_tokenize(text, removePunctuation=True)
@@ -42,6 +50,13 @@ def model(text: str, n: int):
     will have unigrams. If n = 2, bigrams and so on.
 
                 ބަހެެއް ނުވަތަ ބަސްތަކެއް ލިޔުމުން ފެންނާނެ ކަމުގެ ޕްރޮބަބިލިޓީ ތަކުގެ ޑިކްށަނަރީއެއް އަނބުރާދޭނެއެވެ
+    
+    >>> text = "ބުނެފައި އަދި އިތުރު. ބުނެފައި އަދި އިތުރުކަމެއް"
+    >>> model(text, 3)
+    [
+        {"gram": ("ބުނެފައި", "އަދި", "އިތުރު"), "probability": 0.5},
+        {"gram": ("ބުނެފައި", "އަދި", "އިތުރުކަމެއް"), "probability": 0.5},
+    ]
     """
     probabilities = []
     if n == 1:
