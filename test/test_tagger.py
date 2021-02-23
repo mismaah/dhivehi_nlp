@@ -28,6 +28,9 @@ class test_tagger(unittest.TestCase):
             tagger.parts_of_speech("މަންނާނެ"), [("މަންނާނެ", "ކަން")],
         )
 
+    def test_pos_list(self):
+        self.assertEqual(len(tagger.get_pos_list("އަކުރު")), 35)
+
 
 if __name__ == "__main__":
     unittest.main()

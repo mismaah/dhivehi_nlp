@@ -77,3 +77,21 @@ def parts_of_speech(text: str):
         else:
             tagged.append((token, tag[0]))
     return tagged
+
+
+def get_pos_list(pos: str):
+    """
+    Returns a list of words in the database of the specified part of speech.
+
+    ލިޔެފައިވާ ބަހުގެ ބަޔަށް ނިސްބަތްވާ ބަސްތަކުގެ ލިސްޓެއް އަނބުރާ ދޭނެއެވެ
+    
+    >>> get_pos_list('އަކުރު')
+    ['ދެން', 'ވީމާ', 'އިން', ...
+    """
+    con = _db_connect()
+    cursor = con.cursor()
+    query = f"SELECT word FROM pos WHERE part_of_speech='{pos}'"
+    cursor.execute(query)
+    pos_list = [word[0] for word in cursor.fetchall()]
+    con.close()
+    return pos_list
