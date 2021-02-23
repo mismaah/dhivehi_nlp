@@ -1,4 +1,4 @@
-"""Remove suffixes and prefixes from words to return their root form.
+"""Remove suffixes from words to return their root form.
 
 ބަހުގެ ކުރީގައި ނުވަތަ ފަހަތުގައި ވާ އަކުރުތައް ނެގުމަށްފަހު ބަހުގެ އަސްލުގޮތް އަނބުރާ ދިނުން
 """

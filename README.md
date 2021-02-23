@@ -8,7 +8,7 @@ Tokenizer - Tokenize text into separate sentences or words (tokens).
 
 Stopwords - Remove stopwords from text and return the resulting tokens.
 
-Stemmer - Remove suffixes and prefixes from words to return their root form.
+Stemmer - Remove suffixes from words to return their root form.
 
 Language Models - Create language models to predict future additions. Language models will give
 probability based on selected ngram. An ngram is contiguous sequence of n tokens

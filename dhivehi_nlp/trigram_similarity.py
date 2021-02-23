@@ -1,5 +1,5 @@
 """Trigram similarity divides words or phrases into sequences of three
-consecutive letters, place in a set where the order doesn't matter and
+consecutive letters, placed in a set where the order doesn't matter and
 duplicates are removed. Used to find string matches even if certain characters
 are different, based on similarity value.
 
