@@ -1,3 +1,28 @@
+# dhivehi-nlp
+
 Natural language processing tools for the Dhivehi language.
 
-Work in progress.
+Contains the following modules:
+
+Tokenizer - Tokenize text into separate sentences or words (tokens).
+
+Stopwords - Remove stopwords from text and return the resulting tokens.
+
+Stemmer - Remove suffixes and prefixes from words to return their root form.
+
+Language Models - Create language models to predict future additions. Language models will give
+probability based on selected ngram. An ngram is contiguous sequence of n tokens
+from the given input text.
+
+Dictionary- Get definitions definitions of Dhivehi words and the word list. Definitions
+obtained from radheef.mv. 
+
+Corpus - Collections of various Dhivehi texts.
+
+Trigram Similarity - Trigram similarity divides words or phrases into sequences of three
+consecutive letters, placed in a set where the order doesn't matter and
+duplicates are removed. Used to find string matches even if certain characters
+are different or out of order, based on similarity value.
+
+Tagger - Tag words in text according to specified rules or patterns. For example,
+tagging words based on which part of speech it belongs to.
