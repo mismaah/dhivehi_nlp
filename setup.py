@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="dhivehi_nlp",
-    version="0.0.1",
+    version="1.0.0",
     author="Mismaah Abdulla",
     author_email="mismaahabdulla@gmail.com",
     description="Natural language processing tools for the Dhivehi language.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/pypa/sampleproject",
+    url="https://github.com/mismaah/dhivehi-nlp",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

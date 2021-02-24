@@ -1,7 +1,7 @@
 """Tag words in text according to specified rules or patterns. For example,
 tagging words based on which part of speech it belongs to.
 
-ބަހުގެ ގަވައިދަށް ބެލުމަށްފަހު އެންމެ އކަށީގެންވާ ޓެގެއް ކަނޑައެޅުން
+ބަހުގެ ގަވައިދަށް ބެލުމަށްފަހު އެންމެ އެކަށީގެންވާ ޓެގެއް ކަނޑައެޅުން
 """
 
 import re
