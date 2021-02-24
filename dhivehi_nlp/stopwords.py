@@ -8,7 +8,7 @@ from dhivehi_nlp import tokenizer, tagger
 
 def get_stopwords():
     """
-    Returns a dictionary of stopwords.
+    Returns a list of stopwords.
 
     ސްޓޮޕްވާޑް ތަކުގެ ޑިކްށަނަރީއެއް އަނބުރާދޭނެއެވެ
     """
