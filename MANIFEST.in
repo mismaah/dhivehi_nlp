@@ -1,1 +1,1 @@
-include data/dhivehi_nlp.db
+include dhivehi_nlp/data/dhivehi_nlp.db
