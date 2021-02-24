@@ -1,4 +1,4 @@
-# dhivehi-nlp
+# dhivehi_nlp
 
 Natural language processing tools for the Dhivehi language.
 
