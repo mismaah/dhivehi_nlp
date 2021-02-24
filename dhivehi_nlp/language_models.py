@@ -84,7 +84,7 @@ def model(text: str, n: int):
     return probabilities
 
 
-def _db_connect(db_path="./store/dhivehi_nlp.db"):
+def _db_connect(db_path="./data/dhivehi_nlp.db"):
     con = sqlite3.connect(db_path)
     return con
 
