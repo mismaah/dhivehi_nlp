@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="dhivehi_nlp",
-    version="1.0.0",
+    version="1.0.2",
     author="Mismaah Abdulla",
     author_email="mismaahabdulla@gmail.com",
     description="Natural language processing tools for the Dhivehi language.",
@@ -19,5 +19,5 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.6",
-    include_package_data=True
+    include_package_data=True,
 )
