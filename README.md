@@ -2,7 +2,13 @@
 
 Natural language processing tools for the Dhivehi language.
 
-Contains the following modules:
+### Installation
+
+```
+pip install dhivehi_nlp
+```
+
+### Modules
 
 Tokenizer - Tokenize text into separate sentences or words (tokens).
 
