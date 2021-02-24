@@ -1,6 +1,6 @@
 """Collections of various Dhivehi texts.
 
-                                                              އެކި ބާވަތުގެ ދިވެހި ލިޔުންތައް
+    އެކި ބާވަތުގެ ދިވެހި ލިޔުންތައް
 """
 
 import sqlite3
