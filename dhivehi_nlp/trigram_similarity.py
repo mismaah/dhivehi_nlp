@@ -1,5 +1,5 @@
 """Trigram similarity divides words or phrases into sequences of three
-consecutive letters, placed in a set where the order doesn't matter and
+consecutive characters, placed in a set where the order doesn't matter and
 duplicates are removed. Used to find string matches even if certain characters
 are different, based on similarity value.
 
@@ -7,7 +7,7 @@ are different, based on similarity value.
 """
 
 import re
-from dhivehi_nlp import dictionary
+from dhivehi_nlp import dictionary, tokenizer
 
 
 def generate_trigrams(text: str):
@@ -80,6 +80,8 @@ def get_similarity(query: str, text=None, max_output=10):
     query_trig = generate_trigrams(query)
     if text == None:
         text = dictionary.get_wordlist()
+    else:
+        text = tokenizer.word_tokenize(text, removePunctuation=True)
     results = []
     for word in text:
         word_trig = generate_trigrams(word)
