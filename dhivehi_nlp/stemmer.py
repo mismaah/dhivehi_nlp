@@ -48,7 +48,7 @@ def stem(text):
     return value is a string. Otherwise a list is returned.
 
     ބަހުގެ ފަހަތުގައި ވާ އަކުރުތައް ނެގުމަށްފަހު ބަހުގެ އަސްލުގޮތް އަނބުރާ ދިނުން
-    
+
     >>> stem("އެކައްޗެއް")
     "އެކަތި"
     >>> stem(["ކަމެއްކަން", "ކަމެއްކަމަކީ", "ކަމެއްކަމުން", "ބަހެއް", "ގަހެއް", "އެކައްޗެއް"])
@@ -62,6 +62,8 @@ def stem(text):
     stems = []
     for i in tokens:
         stem = patterns.sub(lambda x: get_rules().get(x.group(), x.group()), i)
+        if stem == "":
+            continue
         stems.append(stem)
     if len(stems) == 1:
         stems = stems[0]
