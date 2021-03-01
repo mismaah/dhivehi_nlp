@@ -1,6 +1,6 @@
 """Create language models to predict future additions. Language models will give
-probability based on selected ngram. An ngram is contiguous sequence of n tokens
-from the given input text.
+probability based on selected ngram. An ngram is a contiguous sequence of n
+tokens from the given input text.
 
 ދީފައިވާ ލިޔުމުގައިވާ ބަސްތަކަށް ބެލުމަށްފަހު ފަހުން މިލިޔުމަށް އައިސްދާނެ ބަސްތައް ލަފާކުރާނެ މޮޑެލްއެއް އުފެއްދުން 
 """
@@ -15,9 +15,9 @@ def ngrams(text: str, n: int):
     Returns a list of dicts of the ngrams in the text along with their count.
     The ngram is based on the n value provided. If n = 1, the resulting dict
     will have unigrams. If n = 2, bigrams and so on.
-    
+
     އެންގްރާމް ތަކުގެ ލިސްޓެއް އަނބުރާދޭނެއެވެ. މީގައި އެންގްރާމް ލިޔުމުން ފެނުނު އަދަދު ވެސް ހުންނާނެއެވެ
-    
+
     >>> text = "ބުނެފައި އަދި އިތުރު. ބުނެފައި އަދި އިތުރުކަމެއް"
     >>> ngrams(text, 2)
     [
@@ -52,7 +52,7 @@ def model(text: str, n: int):
     will have unigrams. If n = 2, bigrams and so on.
 
     ބަހެެއް ނުވަތަ ބަސްތަކެއް ލިޔުމުން ފެންނާނެ ކަމުގެ ޕްރޮބަބިލިޓީ ތަކުގެ ލިސްޓެއް އަނބުރާދޭނެއެވެ
-    
+
     >>> text = "ބުނެފައި އަދި އިތުރު. ބުނެފައި އަދި އިތުރުކަމެއް"
     >>> model(text, 3)
     [
@@ -103,7 +103,7 @@ def news_model_predict(word: str, max_output=10):
     returned.
 
     ސަން އެމްވީގެ ހަބަރު ތަކުން ހަދާފައިވާ މޮޑެލް ބޭނުން ކޮށްގެން، ދީފައިވާ އަކުރަށްފަހު އަންނާނެ އަކުރު ލަފާ ކުރާނެ އެވެ
-    
+
     >>> text = 'ވަނަ'
     >>> news_model_predict(text, 3)
     [
