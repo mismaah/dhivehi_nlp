@@ -56,7 +56,7 @@ def lyrics():
 
 
 def textbook():
-    """Excerpt from Dhivehi 3 (Sh) teachers book 
+    """Excerpt from Dhivehi 3 (Sh) teachers book
     https://www.moe.gov.mv/en/category/view/31
 
     ދިވެހި 3 (ށ) މުދައްރިސުންގެ ފޮތުން ތަންކޮޅެއް

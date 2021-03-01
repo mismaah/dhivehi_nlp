@@ -13,7 +13,7 @@ def sentence_tokenize(text: str):
 
     ލިޔުމުގައިވާ ޖުމުލަތަކަށް ލިޔުން ވަކިކޮށް އަދި ފެށޭއިރާއި ނިމޭއިރު ހުންނަ ހުސްތަން ނެގުމަށްފަހު ލިސްޓެއް
     އަނބުރާދޭނެއެވެ
-    
+
     >>> sentence_tokenize("ބުނެފަ އެވެ. އިތުރަށް ހާމައެއް ނުކުރެ އެވެ")
     ["ބުނެފަ އެވެ", "އިތުރަށް ހާމައެއް ނުކުރެ އެވެ"]
     """
@@ -31,9 +31,9 @@ def word_tokenize(text: str, removePunctuation=False, removeNonDhivehiNumeric=Fa
     characters from the resulting tokens.
     Keyword argument removeNonDhivehiNumeric can be passed to remove characters
     other than thaana (unicode range 0780 to 07B1) and numbers (0-9).
-    
+
     ލިޔުމުގައިވާ ބަސްތަކަށް ލިޔުން ވަކިކޮށް ލިސްޓެއް އަނބުރާދޭނެއެވެ
-    
+
     >>> word_tokenize("ބުނެފަ އެވެ. އިތުރަށް ހާމައެއް ނުކުރެ އެވެ")
     ["ބުނެފަ", "އެވެ", "އިތުރަށް", "ހާމައެއް", "ނުކުރެ", "އެވެ"],
 

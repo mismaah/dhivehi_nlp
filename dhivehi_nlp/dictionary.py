@@ -18,7 +18,7 @@ def get_definition(word: str) -> str:
     """Returns meaning of word.
 
     ބަހުގެ މާނަ އަނބުރާ ދޭނެއެވެ
-    
+
     >>> get_definition('ތަންވަޅު')
     'ނ. 1 ދަނޑިވަޅު. 2 ފުރުޞަތު. 3 ވަގުތު.'
     """

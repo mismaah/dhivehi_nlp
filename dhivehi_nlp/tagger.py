@@ -86,7 +86,7 @@ def get_pos_list(pos: str):
     Returns a list of words in the database of the specified part of speech.
 
     ލިޔެފައިވާ ބަހުގެ ބަޔަށް ނިސްބަތްވާ ބަސްތަކުގެ ލިސްޓެއް އަނބުރާ ދޭނެއެވެ
-    
+
     >>> get_pos_list('އަކުރު')
     ['ދެން', 'ވީމާ', 'އިން', ...
     """
