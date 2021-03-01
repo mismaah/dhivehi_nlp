@@ -17,7 +17,7 @@ def generate_trigrams(text: str):
     spaces to the beginning and one space to the end of the string are added.
 
     ލިޔެފައިވާ ބަހުގެ ނުވަތަ ބަސްތަކުގެ ޓްރައިގްރާމްތައް ސެޓެއްގެ ގޮތުގައި އަނބުރާ ދޭނެއެވެ
-    
+
     >>> generate_trigrams("ބަޔަކު")
     {
         "  ބ",
@@ -50,7 +50,7 @@ def _compare_trigrams(trig1: set, trig2: set):
 def get_similarity(query: str, text=None, max_output=10):
     """
     Finds the trigram similarity of words compared to the query string and
-    returns a list of similar words from the text list ordered according to 
+    returns a list of similar words from the text list ordered according to
     similarity in descending order.
     The text keyword argument should be a list of strings.
     If a list of words are not provided in the text keyword argument, the
@@ -59,7 +59,7 @@ def get_similarity(query: str, text=None, max_output=10):
     is set to 10 by default if argument is not given.
 
     ލިޔުނު ބަހާއި އެއްގޮތް ބަސްތައް އެއްގޮތްވާ ނިސްބަތުން ލިސްޓެއް ގޮތުގައި އަނބުރާ ދޭނެއެވެ
-    
+
     >>> get_similarity("ބަޔަކު", max_output=5)
     [
         {"word": "ބަޔަކު", "similarity": 1.0},
@@ -89,4 +89,5 @@ def get_similarity(query: str, text=None, max_output=10):
     results = sorted(results, key=lambda k: k["similarity"])[::-1]
     if len(results) > max_output:
         results = results[:max_output]
+    results = [i for i in results if i["similarity"] != 0]
     return results
