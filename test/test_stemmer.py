@@ -37,7 +37,7 @@ class test_stemmer(unittest.TestCase):
         )
 
     def test_stemmer_list_1(self):
-        self.assertEqual(
+        self.assertCountEqual(
             stemmer.stem(
                 "އައްޑޫ ސިޓީގެ ހިތަދޫ އެމްޑީޕީގެ ހަރުގެ ފުލުހުން ވަދެ ތަޅާލައިފިކަމަށް ކުރީގެ ރައީސް މުހައްމަދު ނަޝީދު ވިދާޅުވި ވިދާޅުވުން ފުލުހުން ދޮގުކޮށްފި އެވެ"
             ),
@@ -58,7 +58,6 @@ class test_stemmer(unittest.TestCase):
                 "ވިދާޅުވުން",
                 "ފުލުހުން",
                 "ދޮގުކޮށް",
-                "އެވެ",
             ],
         )
 

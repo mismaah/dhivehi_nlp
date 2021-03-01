@@ -5,7 +5,8 @@ from dhivehi_nlp import tagger
 class test_tagger(unittest.TestCase):
     def test_pos_0(self):
         self.assertEqual(
-            tagger.parts_of_speech("ނުބައިކޮށް"), [("ނުބައިކޮށް", "ކަންއިތުރު")],
+            tagger.parts_of_speech("ނުބައިކޮށް"),
+            [("ނުބައިކޮށް", "ކަންއިތުރު")],
         )
 
     def test_pos_1(self):
@@ -25,11 +26,12 @@ class test_tagger(unittest.TestCase):
 
     def test_pos_2(self):
         self.assertEqual(
-            tagger.parts_of_speech("މަންނާނެ"), [("މަންނާނެ", "ކަން")],
+            tagger.parts_of_speech("މަންނާނެ"),
+            [("މަންނާނެ", "ކަން")],
         )
 
     def test_pos_list(self):
-        self.assertEqual(len(tagger.get_pos_list("އަކުރު")), 35)
+        self.assertEqual(len(tagger.get_pos_list("އަކުރު")), 29)
 
 
 if __name__ == "__main__":
