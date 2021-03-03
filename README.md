@@ -2,6 +2,8 @@
 
 Natural language processing tools for the Dhivehi language.
 
+Demo website to test features: https://dhivehi-nlp.herokuapp.com/
+
 ### Installation
 
 ```
