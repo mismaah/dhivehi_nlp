@@ -11,6 +11,12 @@ class test_tagger(unittest.TestCase):
 
     def test_pos_1(self):
         self.assertEqual(
+            tagger.parts_of_speech("މަންނާނެ"),
+            [("މަންނާނެ", "ކަން")],
+        )
+
+    def test_pos_2(self):
+        self.assertEqual(
             tagger.parts_of_speech(
                 "ބާރުވެރިކަމުގައި ހުރުމުން މީހުންނަށް އެކަން ބަލައިނުގަނެވުނީ ބާވައެވެ"
             ),
@@ -22,12 +28,6 @@ class test_tagger(unittest.TestCase):
                 ("ބަލައިނުގަނެވުނީ", "ކަން"),
                 ("ބާވައެވެ", "ނަން"),
             ],
-        )
-
-    def test_pos_2(self):
-        self.assertEqual(
-            tagger.parts_of_speech("މަންނާނެ"),
-            [("މަންނާނެ", "ކަން")],
         )
 
     def test_pos_list(self):

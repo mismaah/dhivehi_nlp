@@ -91,7 +91,7 @@ class test_language_models(unittest.TestCase):
     def test_news_model_1(self):
         self.assertEqual(language_models.news_model_predict("އއައައައ"), None)
 
-    def test_news_model_0(self):
+    def test_news_model_2(self):
         text = "ވަނީ"
         result = [
             {"prediction": "އެ", "probability": 0.05037284246753924},
