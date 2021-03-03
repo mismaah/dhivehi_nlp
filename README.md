@@ -18,14 +18,14 @@ Stemmer - Remove suffixes from words to return their root form.
 
 Language Models - Create language models to predict future additions. Language models will give
 probability based on selected ngram. An ngram is contiguous sequence of n tokens
-from the given input text.
+from the given input text. Use previously built models to predict future words.
 
-Dictionary- Get definitions definitions of Dhivehi words and the word list. Definitions
+Dictionary - Get definitions of Dhivehi words and the word list. Definitions
 obtained from radheef.mv. 
 
 Corpus - Collections of various Dhivehi texts.
 
-Trigram Similarity - Trigram similarity divides words or phrases into sequences of three
+Trigram Similarity - Divides words or phrases into sequences of three
 consecutive letters, placed in a set where the order doesn't matter and
 duplicates are removed. Used to find string matches even if certain characters
 are different or out of order, based on similarity value.
