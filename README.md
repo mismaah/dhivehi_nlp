@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="https://dhivehi-nlp.herokuapp.com/" target="_blank"><img width="100" src="https://user-images.githubusercontent.com/48324626/114336169-c8ef6100-9b67-11eb-848b-31abf6a68e3b.png" alt="dhivehi-nlp logo"></a>
+</p>
+
 # dhivehi_nlp
 
 Natural language processing tools for the Dhivehi language.
