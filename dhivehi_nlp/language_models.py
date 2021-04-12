@@ -5,8 +5,7 @@ tokens from the given input text.
 ދީފައިވާ ލިޔުމުގައިވާ ބަސްތަކަށް ބެލުމަށްފަހު ފަހުން މިލިޔުމަށް އައިސްދާނެ ބަސްތައް ލަފާކުރާނެ މޮޑެލްއެއް އުފެއްދުން 
 """
 
-import sqlite3
-import pkg_resources
+from dhivehi_nlp._helpers import _db_connect
 from dhivehi_nlp import tokenizer
 
 
@@ -83,12 +82,6 @@ def model(text: str, n: int):
                     }
                     probabilities.append(probability)
     return probabilities
-
-
-def _db_connect():
-    db_path = pkg_resources.resource_filename("dhivehi_nlp", "data/dhivehi_nlp.db")
-    con = sqlite3.connect(db_path)
-    return con
 
 
 def news_model_predict(word: str, max_output=10):

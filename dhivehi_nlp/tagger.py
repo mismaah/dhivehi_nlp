@@ -5,15 +5,8 @@ tagging words based on which part of speech it belongs to.
 """
 
 import re
-import sqlite3
-import pkg_resources
+from dhivehi_nlp._helpers import _db_connect
 from dhivehi_nlp import tokenizer
-
-
-def _db_connect():
-    db_path = pkg_resources.resource_filename("dhivehi_nlp", "data/dhivehi_nlp.db")
-    con = sqlite3.connect(db_path)
-    return con
 
 
 def _get_tag(word: str) -> str:
