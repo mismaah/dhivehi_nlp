@@ -36,14 +36,7 @@ obtained from radheef.mv.
 ބަސްތަކުގެ ލިސްޓާއި ބަސްތަކުގެ މާނަ ހޯދުން
 &#34;&#34;&#34;
 
-import sqlite3
-import pkg_resources
-
-
-def _db_connect():
-    db_path = pkg_resources.resource_filename(&#34;dhivehi_nlp&#34;, &#34;data/dhivehi_nlp.db&#34;)
-    con = sqlite3.connect(db_path)
-    return con
+from dhivehi_nlp._helpers import _db_connect
 
 
 def get_definition(word: str) -&gt; str:
@@ -65,7 +58,7 @@ def get_definition(word: str) -&gt; str:
     return definition[0]
 
 
-def get_wordlist():
+def get_wordlist() -&gt; list:
     &#34;&#34;&#34;Returns a list of all the Dhivehi words in the radheef (dictionary).
 
     ހުރިހާ ބަސްތަކެއްގެ ލިސްޓެއް އަނބުރާ ދޭނެއެވެ
@@ -118,7 +111,7 @@ def get_wordlist():
 </details>
 </dd>
 <dt id="dhivehi_nlp.dictionary.get_wordlist"><code class="name flex">
-<span>def <span class="ident">get_wordlist</span></span>(<span>)</span>
+<span>def <span class="ident">get_wordlist</span></span>(<span>) ‑> list</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Returns a list of all the Dhivehi words in the radheef (dictionary).</p>
@@ -127,7 +120,7 @@ def get_wordlist():
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_wordlist():
+<pre><code class="python">def get_wordlist() -&gt; list:
     &#34;&#34;&#34;Returns a list of all the Dhivehi words in the radheef (dictionary).
 
     ހުރިހާ ބަސްތަކެއްގެ ލިސްޓެއް އަނބުރާ ދޭނެއެވެ

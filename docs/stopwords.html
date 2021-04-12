@@ -36,7 +36,7 @@
 from dhivehi_nlp import tokenizer, tagger
 
 
-def get_stopwords():
+def get_stopwords() -&gt; list:
     &#34;&#34;&#34;
     Returns a list of stopwords.
 
@@ -75,7 +75,7 @@ def get_stopwords():
     ]
 
 
-def remove_stopwords(text: str):
+def remove_stopwords(text: str) -&gt; list:
     &#34;&#34;&#34;
     Returns a list of tokens from the input text after removing the stopwords.
 
@@ -101,7 +101,7 @@ def remove_stopwords(text: str):
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="dhivehi_nlp.stopwords.get_stopwords"><code class="name flex">
-<span>def <span class="ident">get_stopwords</span></span>(<span>)</span>
+<span>def <span class="ident">get_stopwords</span></span>(<span>) ‑> list</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Returns a list of stopwords.</p>
@@ -110,7 +110,7 @@ def remove_stopwords(text: str):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_stopwords():
+<pre><code class="python">def get_stopwords() -&gt; list:
     &#34;&#34;&#34;
     Returns a list of stopwords.
 
@@ -150,7 +150,7 @@ def remove_stopwords(text: str):
 </details>
 </dd>
 <dt id="dhivehi_nlp.stopwords.remove_stopwords"><code class="name flex">
-<span>def <span class="ident">remove_stopwords</span></span>(<span>text: str)</span>
+<span>def <span class="ident">remove_stopwords</span></span>(<span>text: str) ‑> list</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Returns a list of tokens from the input text after removing the stopwords.</p>
@@ -162,7 +162,7 @@ def remove_stopwords(text: str):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def remove_stopwords(text: str):
+<pre><code class="python">def remove_stopwords(text: str) -&gt; list:
     &#34;&#34;&#34;
     Returns a list of tokens from the input text after removing the stopwords.
 

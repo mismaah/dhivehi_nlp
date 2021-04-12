@@ -33,14 +33,7 @@
     އެކި ބާވަތުގެ ދިވެހި ލިޔުންތައް
 &#34;&#34;&#34;
 
-import sqlite3
-import pkg_resources
-
-
-def _db_connect():
-    db_path = pkg_resources.resource_filename(&#34;dhivehi_nlp&#34;, &#34;data/dhivehi_nlp.db&#34;)
-    con = sqlite3.connect(db_path)
-    return con
+from dhivehi_nlp._helpers import _db_connect
 
 
 def _db_read(name: str) -&gt; str:
@@ -53,7 +46,7 @@ def _db_read(name: str) -&gt; str:
     return content[0]
 
 
-def news():
+def news() -&gt; str:
     &#34;&#34;&#34;News article from sun.mv https://sun.mv/145845
 
     ސަން އެމްވީގެ ނޫސް ހަބަރެއް
@@ -61,7 +54,7 @@ def news():
     return _db_read(&#34;news&#34;)
 
 
-def story():
+def story() -&gt; str:
     &#34;&#34;&#34;Rehendhi short story by Aishath Afra https://vaahaka.com/story/9604/
 
     އައިޝަތު އަފްރާގެ ކުރުވާހަކަ ރެހެނދި
@@ -69,7 +62,7 @@ def story():
     return _db_read(&#34;story&#34;)
 
 
-def tweet():
+def tweet() -&gt; str:
     &#34;&#34;&#34;Tweet by @FSaaira https://twitter.com/FSaaira/status/1334579523006812160
 
     ފާތުމަތު ސާއިރާގެ ޓްވީޓެއް
@@ -77,7 +70,7 @@ def tweet():
     return _db_read(&#34;tweet&#34;)
 
 
-def lyrics():
+def lyrics() -&gt; str:
     &#34;&#34;&#34;Lyrics of Hingaa Hoadhama Hey by Hussain Ali
 
     ހުސެން އަލީގެ ހިނގާ ހޯދަމާހޭ ލަވައިގެ ޅެން
@@ -85,7 +78,7 @@ def lyrics():
     return _db_read(&#34;lyrics&#34;)
 
 
-def textbook():
+def textbook() -&gt; str:
     &#34;&#34;&#34;Excerpt from Dhivehi 3 (Sh) teachers book
     https://www.moe.gov.mv/en/category/view/31
 
@@ -102,7 +95,7 @@ def textbook():
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="dhivehi_nlp.corpus.lyrics"><code class="name flex">
-<span>def <span class="ident">lyrics</span></span>(<span>)</span>
+<span>def <span class="ident">lyrics</span></span>(<span>) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Lyrics of Hingaa Hoadhama Hey by Hussain Ali</p>
@@ -111,7 +104,7 @@ def textbook():
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def lyrics():
+<pre><code class="python">def lyrics() -&gt; str:
     &#34;&#34;&#34;Lyrics of Hingaa Hoadhama Hey by Hussain Ali
 
     ހުސެން އަލީގެ ހިނގާ ހޯދަމާހޭ ލަވައިގެ ޅެން
@@ -120,7 +113,7 @@ def textbook():
 </details>
 </dd>
 <dt id="dhivehi_nlp.corpus.news"><code class="name flex">
-<span>def <span class="ident">news</span></span>(<span>)</span>
+<span>def <span class="ident">news</span></span>(<span>) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>News article from sun.mv <a href="https://sun.mv/145845">https://sun.mv/145845</a></p>
@@ -129,7 +122,7 @@ def textbook():
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def news():
+<pre><code class="python">def news() -&gt; str:
     &#34;&#34;&#34;News article from sun.mv https://sun.mv/145845
 
     ސަން އެމްވީގެ ނޫސް ހަބަރެއް
@@ -138,7 +131,7 @@ def textbook():
 </details>
 </dd>
 <dt id="dhivehi_nlp.corpus.story"><code class="name flex">
-<span>def <span class="ident">story</span></span>(<span>)</span>
+<span>def <span class="ident">story</span></span>(<span>) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Rehendhi short story by Aishath Afra <a href="https://vaahaka.com/story/9604/">https://vaahaka.com/story/9604/</a></p>
@@ -147,7 +140,7 @@ def textbook():
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def story():
+<pre><code class="python">def story() -&gt; str:
     &#34;&#34;&#34;Rehendhi short story by Aishath Afra https://vaahaka.com/story/9604/
 
     އައިޝަތު އަފްރާގެ ކުރުވާހަކަ ރެހެނދި
@@ -156,7 +149,7 @@ def textbook():
 </details>
 </dd>
 <dt id="dhivehi_nlp.corpus.textbook"><code class="name flex">
-<span>def <span class="ident">textbook</span></span>(<span>)</span>
+<span>def <span class="ident">textbook</span></span>(<span>) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Excerpt from Dhivehi 3 (Sh) teachers book
@@ -166,7 +159,7 @@ def textbook():
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def textbook():
+<pre><code class="python">def textbook() -&gt; str:
     &#34;&#34;&#34;Excerpt from Dhivehi 3 (Sh) teachers book
     https://www.moe.gov.mv/en/category/view/31
 
@@ -176,7 +169,7 @@ def textbook():
 </details>
 </dd>
 <dt id="dhivehi_nlp.corpus.tweet"><code class="name flex">
-<span>def <span class="ident">tweet</span></span>(<span>)</span>
+<span>def <span class="ident">tweet</span></span>(<span>) ‑> str</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Tweet by @FSaaira <a href="https://twitter.com/FSaaira/status/1334579523006812160">https://twitter.com/FSaaira/status/1334579523006812160</a></p>
@@ -185,7 +178,7 @@ def textbook():
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def tweet():
+<pre><code class="python">def tweet() -&gt; str:
     &#34;&#34;&#34;Tweet by @FSaaira https://twitter.com/FSaaira/status/1334579523006812160
 
     ފާތުމަތު ސާއިރާގެ ޓްވީޓެއް

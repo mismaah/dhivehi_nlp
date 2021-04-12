@@ -37,7 +37,7 @@ import re
 from dhivehi_nlp import tokenizer
 
 
-def get_rules():
+def get_rules() -&gt; &#34;dict[str, str]&#34;:
     &#34;&#34;&#34;
     Returns a dictionary of stemming rules.
 
@@ -71,7 +71,7 @@ def get_rules():
     }
 
 
-def stem(text):
+def stem(text) -&gt; list:
     &#34;&#34;&#34;
     Returns a stemmed form of the given word(s).
     If the input is a string with a single word or a list with one element, the
@@ -108,7 +108,7 @@ def stem(text):
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="dhivehi_nlp.stemmer.get_rules"><code class="name flex">
-<span>def <span class="ident">get_rules</span></span>(<span>)</span>
+<span>def <span class="ident">get_rules</span></span>(<span>) ‑> dict[str, str]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Returns a dictionary of stemming rules.</p>
@@ -117,7 +117,7 @@ def stem(text):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_rules():
+<pre><code class="python">def get_rules() -&gt; &#34;dict[str, str]&#34;:
     &#34;&#34;&#34;
     Returns a dictionary of stemming rules.
 
@@ -152,7 +152,7 @@ def stem(text):
 </details>
 </dd>
 <dt id="dhivehi_nlp.stemmer.stem"><code class="name flex">
-<span>def <span class="ident">stem</span></span>(<span>text)</span>
+<span>def <span class="ident">stem</span></span>(<span>text) ‑> list</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Returns a stemmed form of the given word(s).
@@ -168,7 +168,7 @@ return value is a string. Otherwise a list is returned.</p>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def stem(text):
+<pre><code class="python">def stem(text) -&gt; list:
     &#34;&#34;&#34;
     Returns a stemmed form of the given word(s).
     If the input is a string with a single word or a list with one element, the

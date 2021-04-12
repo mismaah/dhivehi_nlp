@@ -36,7 +36,7 @@
 import re
 
 
-def sentence_tokenize(text: str):
+def sentence_tokenize(text: str) -&gt; list:
     &#34;&#34;&#34;
     Returns a list where the text is split into separate sentences with
     preceding and succeeding whitespaces removed.
@@ -52,7 +52,9 @@ def sentence_tokenize(text: str):
     return sentences
 
 
-def word_tokenize(text: str, removePunctuation=False, removeNonDhivehiNumeric=False):
+def word_tokenize(
+    text: str, removePunctuation=False, removeNonDhivehiNumeric=False
+) -&gt; list:
     &#34;&#34;&#34;
     Returns a list where the text is split into separate words (tokens). If the
     text contains multiple sentences, they are run through the
@@ -95,7 +97,7 @@ def word_tokenize(text: str, removePunctuation=False, removeNonDhivehiNumeric=Fa
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="dhivehi_nlp.tokenizer.sentence_tokenize"><code class="name flex">
-<span>def <span class="ident">sentence_tokenize</span></span>(<span>text: str)</span>
+<span>def <span class="ident">sentence_tokenize</span></span>(<span>text: str) ‑> list</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Returns a list where the text is split into separate sentences with
@@ -109,7 +111,7 @@ preceding and succeeding whitespaces removed.</p>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def sentence_tokenize(text: str):
+<pre><code class="python">def sentence_tokenize(text: str) -&gt; list:
     &#34;&#34;&#34;
     Returns a list where the text is split into separate sentences with
     preceding and succeeding whitespaces removed.
@@ -126,7 +128,7 @@ preceding and succeeding whitespaces removed.</p>
 </details>
 </dd>
 <dt id="dhivehi_nlp.tokenizer.word_tokenize"><code class="name flex">
-<span>def <span class="ident">word_tokenize</span></span>(<span>text: str, removePunctuation=False, removeNonDhivehiNumeric=False)</span>
+<span>def <span class="ident">word_tokenize</span></span>(<span>text: str, removePunctuation=False, removeNonDhivehiNumeric=False) ‑> list</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Returns a list where the text is split into separate words (tokens). If the
@@ -150,7 +152,9 @@ other than thaana (unicode range 0780 to 07B1) and numbers (0-9).</p>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def word_tokenize(text: str, removePunctuation=False, removeNonDhivehiNumeric=False):
+<pre><code class="python">def word_tokenize(
+    text: str, removePunctuation=False, removeNonDhivehiNumeric=False
+) -&gt; list:
     &#34;&#34;&#34;
     Returns a list where the text is split into separate words (tokens). If the
     text contains multiple sentences, they are run through the

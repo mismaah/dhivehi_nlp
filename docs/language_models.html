@@ -38,12 +38,11 @@ tokens from the given input text.
 ދީފައިވާ ލިޔުމުގައިވާ ބަސްތަކަށް ބެލުމަށްފަހު ފަހުން މިލިޔުމަށް އައިސްދާނެ ބަސްތައް ލަފާކުރާނެ މޮޑެލްއެއް އުފެއްދުން 
 &#34;&#34;&#34;
 
-import sqlite3
-import pkg_resources
+from dhivehi_nlp._helpers import _db_connect
 from dhivehi_nlp import tokenizer
 
 
-def ngrams(text: str, n: int):
+def ngrams(text: str, n: int) -&gt; list:
     &#34;&#34;&#34;
     Returns a list of dicts of the ngrams in the text along with their count.
     The ngram is based on the n value provided. If n = 1, the resulting dict
@@ -77,7 +76,7 @@ def ngrams(text: str, n: int):
     return grams_counted
 
 
-def model(text: str, n: int):
+def model(text: str, n: int) -&gt; list:
     &#34;&#34;&#34;
     Returns a list of dicts of a word or phrase in the text and the probability
     of the of the word or phrase appearing in the text.
@@ -118,13 +117,7 @@ def model(text: str, n: int):
     return probabilities
 
 
-def _db_connect():
-    db_path = pkg_resources.resource_filename(&#34;dhivehi_nlp&#34;, &#34;data/dhivehi_nlp.db&#34;)
-    con = sqlite3.connect(db_path)
-    return con
-
-
-def news_model_predict(word: str, max_output=10):
+def news_model_predict(word: str, max_output=10) -&gt; list:
     &#34;&#34;&#34;Predict the next word using a model based on news bigrams. Model was made
     from a 10000 random sample from 132029 news articles obtained from sun.mv.
     Returns a list of dicts containing the predicted word and the probability
@@ -152,7 +145,7 @@ def news_model_predict(word: str, max_output=10):
     matches = cursor.fetchall()
     con.close()
     if not matches:
-        return None
+        return []
     total = 0
     for i in matches:
         total += i[2]
@@ -173,7 +166,7 @@ def news_model_predict(word: str, max_output=10):
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="dhivehi_nlp.language_models.model"><code class="name flex">
-<span>def <span class="ident">model</span></span>(<span>text: str, n: int)</span>
+<span>def <span class="ident">model</span></span>(<span>text: str, n: int) ‑> list</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Returns a list of dicts of a word or phrase in the text and the probability
@@ -192,7 +185,7 @@ will have unigrams. If n = 2, bigrams and so on.</p>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def model(text: str, n: int):
+<pre><code class="python">def model(text: str, n: int) -&gt; list:
     &#34;&#34;&#34;
     Returns a list of dicts of a word or phrase in the text and the probability
     of the of the word or phrase appearing in the text.
@@ -234,7 +227,7 @@ will have unigrams. If n = 2, bigrams and so on.</p>
 </details>
 </dd>
 <dt id="dhivehi_nlp.language_models.news_model_predict"><code class="name flex">
-<span>def <span class="ident">news_model_predict</span></span>(<span>word: str, max_output=10)</span>
+<span>def <span class="ident">news_model_predict</span></span>(<span>word: str, max_output=10) ‑> list</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Predict the next word using a model based on news bigrams. Model was made
@@ -259,7 +252,7 @@ returned.</p>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def news_model_predict(word: str, max_output=10):
+<pre><code class="python">def news_model_predict(word: str, max_output=10) -&gt; list:
     &#34;&#34;&#34;Predict the next word using a model based on news bigrams. Model was made
     from a 10000 random sample from 132029 news articles obtained from sun.mv.
     Returns a list of dicts containing the predicted word and the probability
@@ -287,7 +280,7 @@ returned.</p>
     matches = cursor.fetchall()
     con.close()
     if not matches:
-        return None
+        return []
     total = 0
     for i in matches:
         total += i[2]
@@ -301,7 +294,7 @@ returned.</p>
 </details>
 </dd>
 <dt id="dhivehi_nlp.language_models.ngrams"><code class="name flex">
-<span>def <span class="ident">ngrams</span></span>(<span>text: str, n: int)</span>
+<span>def <span class="ident">ngrams</span></span>(<span>text: str, n: int) ‑> list</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Returns a list of dicts of the ngrams in the text along with their count.
@@ -320,7 +313,7 @@ will have unigrams. If n = 2, bigrams and so on.</p>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def ngrams(text: str, n: int):
+<pre><code class="python">def ngrams(text: str, n: int) -&gt; list:
     &#34;&#34;&#34;
     Returns a list of dicts of the ngrams in the text along with their count.
     The ngram is based on the n value provided. If n = 1, the resulting dict

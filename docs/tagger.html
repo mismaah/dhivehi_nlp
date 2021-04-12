@@ -37,15 +37,8 @@ tagging words based on which part of speech it belongs to.
 &#34;&#34;&#34;
 
 import re
-import sqlite3
-import pkg_resources
+from dhivehi_nlp._helpers import _db_connect
 from dhivehi_nlp import tokenizer
-
-
-def _db_connect():
-    db_path = pkg_resources.resource_filename(&#34;dhivehi_nlp&#34;, &#34;data/dhivehi_nlp.db&#34;)
-    con = sqlite3.connect(db_path)
-    return con
 
 
 def _get_tag(word: str) -&gt; str:
@@ -58,7 +51,7 @@ def _get_tag(word: str) -&gt; str:
     return tag
 
 
-def _pos_rules():
+def _pos_rules() -&gt; &#34;list[dict[str, list[str]]]&#34;:
     return [
         {&#34;pos&#34;: &#34;މަސްދަރު&#34;, &#34;rules&#34;: [&#34;ުން&#34;]},
         {&#34;pos&#34;: &#34;ނަންއިތުރު&#34;, &#34;rules&#34;: [&#34;ތެރި&#34;]},
@@ -78,7 +71,7 @@ def _match_rules(token: str, rules: list) -&gt; str:
     return &#34;ނަން&#34;
 
 
-def parts_of_speech(text: str):
+def parts_of_speech(text: str) -&gt; list:
     &#34;&#34;&#34;
     Tag words according to which part of speech they belong to. Initially they
     are checked against a database of predefined words and tags. If not found in
@@ -113,7 +106,7 @@ def parts_of_speech(text: str):
     return tagged
 
 
-def get_pos_list(pos: str):
+def get_pos_list(pos: str) -&gt; list:
     &#34;&#34;&#34;
     Returns a list of words in the database of the specified part of speech.
 
@@ -139,7 +132,7 @@ def get_pos_list(pos: str):
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="dhivehi_nlp.tagger.get_pos_list"><code class="name flex">
-<span>def <span class="ident">get_pos_list</span></span>(<span>pos: str)</span>
+<span>def <span class="ident">get_pos_list</span></span>(<span>pos: str) ‑> list</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Returns a list of words in the database of the specified part of speech.</p>
@@ -151,7 +144,7 @@ def get_pos_list(pos: str):
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_pos_list(pos: str):
+<pre><code class="python">def get_pos_list(pos: str) -&gt; list:
     &#34;&#34;&#34;
     Returns a list of words in the database of the specified part of speech.
 
@@ -170,7 +163,7 @@ def get_pos_list(pos: str):
 </details>
 </dd>
 <dt id="dhivehi_nlp.tagger.parts_of_speech"><code class="name flex">
-<span>def <span class="ident">parts_of_speech</span></span>(<span>text: str)</span>
+<span>def <span class="ident">parts_of_speech</span></span>(<span>text: str) ‑> list</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Tag words according to which part of speech they belong to. Initially they
@@ -197,7 +190,7 @@ as it is the most common tag (almost equivalent to NN in english).</p>
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def parts_of_speech(text: str):
+<pre><code class="python">def parts_of_speech(text: str) -&gt; list:
     &#34;&#34;&#34;
     Tag words according to which part of speech they belong to. Initially they
     are checked against a database of predefined words and tags. If not found in
