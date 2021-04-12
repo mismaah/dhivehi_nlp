@@ -7,7 +7,7 @@ import re
 from dhivehi_nlp import tokenizer
 
 
-def get_rules():
+def get_rules() -> "dict[str, str]":
     """
     Returns a dictionary of stemming rules.
 
@@ -41,7 +41,7 @@ def get_rules():
     }
 
 
-def stem(text):
+def stem(text) -> list:
     """
     Returns a stemmed form of the given word(s).
     If the input is a string with a single word or a list with one element, the

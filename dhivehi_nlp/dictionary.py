@@ -26,7 +26,7 @@ def get_definition(word: str) -> str:
     return definition[0]
 
 
-def get_wordlist():
+def get_wordlist() -> list:
     """Returns a list of all the Dhivehi words in the radheef (dictionary).
 
     ހުރިހާ ބަސްތަކެއްގެ ލިސްޓެއް އަނބުރާ ދޭނެއެވެ

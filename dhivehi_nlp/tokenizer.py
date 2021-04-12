@@ -6,7 +6,7 @@
 import re
 
 
-def sentence_tokenize(text: str):
+def sentence_tokenize(text: str) -> list:
     """
     Returns a list where the text is split into separate sentences with
     preceding and succeeding whitespaces removed.
@@ -22,7 +22,9 @@ def sentence_tokenize(text: str):
     return sentences
 
 
-def word_tokenize(text: str, removePunctuation=False, removeNonDhivehiNumeric=False):
+def word_tokenize(
+    text: str, removePunctuation=False, removeNonDhivehiNumeric=False
+) -> list:
     """
     Returns a list where the text is split into separate words (tokens). If the
     text contains multiple sentences, they are run through the

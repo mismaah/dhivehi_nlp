@@ -16,7 +16,7 @@ def _db_read(name: str) -> str:
     return content[0]
 
 
-def news():
+def news() -> str:
     """News article from sun.mv https://sun.mv/145845
 
     ސަން އެމްވީގެ ނޫސް ހަބަރެއް
@@ -24,7 +24,7 @@ def news():
     return _db_read("news")
 
 
-def story():
+def story() -> str:
     """Rehendhi short story by Aishath Afra https://vaahaka.com/story/9604/
 
     އައިޝަތު އަފްރާގެ ކުރުވާހަކަ ރެހެނދި
@@ -32,7 +32,7 @@ def story():
     return _db_read("story")
 
 
-def tweet():
+def tweet() -> str:
     """Tweet by @FSaaira https://twitter.com/FSaaira/status/1334579523006812160
 
     ފާތުމަތު ސާއިރާގެ ޓްވީޓެއް
@@ -40,7 +40,7 @@ def tweet():
     return _db_read("tweet")
 
 
-def lyrics():
+def lyrics() -> str:
     """Lyrics of Hingaa Hoadhama Hey by Hussain Ali
 
     ހުސެން އަލީގެ ހިނގާ ހޯދަމާހޭ ލަވައިގެ ޅެން
@@ -48,7 +48,7 @@ def lyrics():
     return _db_read("lyrics")
 
 
-def textbook():
+def textbook() -> str:
     """Excerpt from Dhivehi 3 (Sh) teachers book
     https://www.moe.gov.mv/en/category/view/31
 

@@ -19,7 +19,7 @@ def _get_tag(word: str) -> str:
     return tag
 
 
-def _pos_rules():
+def _pos_rules() -> "list[dict[str, list[str]]]":
     return [
         {"pos": "މަސްދަރު", "rules": ["ުން"]},
         {"pos": "ނަންއިތުރު", "rules": ["ތެރި"]},
@@ -39,7 +39,7 @@ def _match_rules(token: str, rules: list) -> str:
     return "ނަން"
 
 
-def parts_of_speech(text: str):
+def parts_of_speech(text: str) -> list:
     """
     Tag words according to which part of speech they belong to. Initially they
     are checked against a database of predefined words and tags. If not found in
@@ -74,7 +74,7 @@ def parts_of_speech(text: str):
     return tagged
 
 
-def get_pos_list(pos: str):
+def get_pos_list(pos: str) -> list:
     """
     Returns a list of words in the database of the specified part of speech.
 

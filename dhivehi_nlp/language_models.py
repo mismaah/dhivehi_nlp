@@ -9,7 +9,7 @@ from dhivehi_nlp._helpers import _db_connect
 from dhivehi_nlp import tokenizer
 
 
-def ngrams(text: str, n: int):
+def ngrams(text: str, n: int) -> list:
     """
     Returns a list of dicts of the ngrams in the text along with their count.
     The ngram is based on the n value provided. If n = 1, the resulting dict
@@ -43,7 +43,7 @@ def ngrams(text: str, n: int):
     return grams_counted
 
 
-def model(text: str, n: int):
+def model(text: str, n: int) -> list:
     """
     Returns a list of dicts of a word or phrase in the text and the probability
     of the of the word or phrase appearing in the text.
@@ -84,7 +84,7 @@ def model(text: str, n: int):
     return probabilities
 
 
-def news_model_predict(word: str, max_output=10):
+def news_model_predict(word: str, max_output=10) -> list:
     """Predict the next word using a model based on news bigrams. Model was made
     from a 10000 random sample from 132029 news articles obtained from sun.mv.
     Returns a list of dicts containing the predicted word and the probability
@@ -112,7 +112,7 @@ def news_model_predict(word: str, max_output=10):
     matches = cursor.fetchall()
     con.close()
     if not matches:
-        return None
+        return []
     total = 0
     for i in matches:
         total += i[2]

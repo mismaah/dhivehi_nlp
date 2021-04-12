@@ -10,7 +10,7 @@ import re
 from dhivehi_nlp import dictionary, tokenizer
 
 
-def generate_trigrams(text: str):
+def generate_trigrams(text: str) -> set:
     """
     Return a set of trigrams in a given text.
     Preprocessing is done where each space is changed to two spaces. Also, two
@@ -35,7 +35,7 @@ def generate_trigrams(text: str):
     return set([text[i : i + 3] for i in range(len(text) - 2)])
 
 
-def _compare_trigrams(trig1: set, trig2: set):
+def _compare_trigrams(trig1: set, trig2: set) -> float:
     """
     Checks how many trigrams from the first set are present in the second and
     returns that value divided by the length of the second set.
@@ -47,7 +47,7 @@ def _compare_trigrams(trig1: set, trig2: set):
     return count / len(trig2)
 
 
-def get_similarity(query: str, text=None, max_output=10):
+def get_similarity(query: str, text=None, max_output=10) -> list:
     """
     Finds the trigram similarity of words compared to the query string and
     returns a list of similar words from the text list ordered according to

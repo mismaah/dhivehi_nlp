@@ -6,7 +6,7 @@
 from dhivehi_nlp import tokenizer, tagger
 
 
-def get_stopwords():
+def get_stopwords() -> list:
     """
     Returns a list of stopwords.
 
@@ -45,7 +45,7 @@ def get_stopwords():
     ]
 
 
-def remove_stopwords(text: str):
+def remove_stopwords(text: str) -> list:
     """
     Returns a list of tokens from the input text after removing the stopwords.
 
