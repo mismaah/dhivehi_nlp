@@ -41,3 +41,18 @@ are different or out of order, based on similarity value.
 
 Tagger - Tag words in text according to specified rules or patterns. For
 example, tagging words based on which part of speech it belongs to.
+
+### Contribution
+
+There are many potential improvements to be made to this library whether it be
+optimizing current modules, creating new modules or fixing bugs. For instance,
+the stemmer and stopwords modules use a predefined set of rules to perform their
+operations. These rule sets are still incomplete and can be expanded upon.
+
+To propose any changes, simply open a pull request.
+
+Bug reports, suggestions, questions, etc., can be done by 
+[creating a new issue](https://github.com/mismaah/dhivehi_nlp/issues/new).
+
+Code formatting is done using [black](https://github.com/psf/black) to ensure
+consistency.
