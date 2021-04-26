@@ -31,7 +31,7 @@ class test_tagger(unittest.TestCase):
         )
 
     def test_pos_list(self):
-        self.assertEqual(len(tagger.get_pos_list("އަކުރު")), 29)
+        self.assertEqual(len(tagger.get_pos_list("އަކުރު")), 27)
 
 
 if __name__ == "__main__":

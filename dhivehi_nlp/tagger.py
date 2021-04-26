@@ -12,7 +12,7 @@ from dhivehi_nlp import tokenizer
 def _get_tag(word: str) -> str:
     con = _db_connect()
     cursor = con.cursor()
-    query = f"SELECT part_of_speech FROM pos WHERE word='{word}'"
+    query = f"SELECT part_of_speech FROM radheef WHERE word='{word}'"
     cursor.execute(query)
     tag = cursor.fetchone()
     con.close()
@@ -85,7 +85,7 @@ def get_pos_list(pos: str) -> list:
     """
     con = _db_connect()
     cursor = con.cursor()
-    query = f"SELECT word FROM pos WHERE part_of_speech='{pos}'"
+    query = f"SELECT word FROM radheef WHERE part_of_speech='{pos}'"
     cursor.execute(query)
     pos_list = [word[0] for word in cursor.fetchall()]
     con.close()

@@ -4,7 +4,7 @@ from dhivehi_nlp import dictionary
 
 class test_dictionary(unittest.TestCase):
     def test_get_definion(self):
-        self.assertEqual(dictionary.get_definition("ހަހަރުވެތުން"), "މ. ލޯބިކުރުން.")
+        self.assertEqual(dictionary.get_definition("ހަހަރުވެތުން"), "1. ލޯބިކުރުން.")
 
     def test_get_definion_not_exist(self):
         self.assertIsNone(dictionary.get_definition("baa"))
