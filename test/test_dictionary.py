@@ -4,10 +4,10 @@ from dhivehi_nlp import dictionary
 
 class test_dictionary(unittest.TestCase):
     def test_get_definion(self):
-        self.assertEqual(dictionary.get_definition("ހަހަރުވެތުން"), "1. ލޯބިކުރުން.")
+        self.assertEqual(dictionary.get_definition("ހަހަރުވެތުން"), ["1. ލޯބިކުރުން."])
 
     def test_get_definion_not_exist(self):
-        self.assertIsNone(dictionary.get_definition("baa"))
+        self.assertEqual(dictionary.get_definition("baa"), [])
 
     def test_get_wordlist(self):
         self.assertGreater(len(dictionary.get_wordlist()), 25000)

@@ -7,8 +7,8 @@ obtained from radheef.mv.
 from dhivehi_nlp._helpers import _db_connect
 
 
-def get_definition(word: str) -> str:
-    """Returns meaning of word.
+def get_definition(word: str) -> list:
+    """Returns definitions of word as a list. Returns empty list if not found.
 
     ބަހުގެ މާނަ އަނބުރާ ދޭނެއެވެ
 
@@ -19,11 +19,12 @@ def get_definition(word: str) -> str:
     cursor = con.cursor()
     query = f"SELECT definition FROM radheef WHERE word='{word}'"
     cursor.execute(query)
-    definition = cursor.fetchone()
+    result = cursor.fetchone()
     con.close()
-    if definition is None:
-        return
-    return definition[0]
+    if result is None:
+        return []
+    definitions = result[0].split("\n")
+    return definitions
 
 
 def get_wordlist() -> list:
