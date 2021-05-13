@@ -13,7 +13,18 @@ def get_definition(word: str) -> list:
     ބަހުގެ މާނަ އަނބުރާ ދޭނެއެވެ
 
     >>> get_definition('ތަންވަޅު')
-    'ނ. 1 ދަނޑިވަޅު. 2 ފުރުޞަތު. 3 ވަގުތު.'
+    ['1. ދަނޑިވަޅު.', '2. ފުރުޞަތު.', '3. ވަގުތު.']
+
+    As seen in the above example where the, there are some problems when
+    displaying dhivehi text in a list. It starts out correctly then switches to
+    right to left orientation midway. This is only a display bug as when printed
+    separately, the output is correct.
+
+    >>> for i in dictionary.get_definition('ތަންވަޅު'):
+    ...     print(i)
+    1. ދަނޑިވަޅު.
+    2. ފުރުޞަތު.
+    3. ވަގުތު.
     """
     con = _db_connect()
     cursor = con.cursor()

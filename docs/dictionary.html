@@ -39,23 +39,35 @@ obtained from radheef.mv.
 from dhivehi_nlp._helpers import _db_connect
 
 
-def get_definition(word: str) -&gt; str:
-    &#34;&#34;&#34;Returns meaning of word.
+def get_definition(word: str) -&gt; list:
+    &#34;&#34;&#34;Returns definitions of word as a list. Returns empty list if not found.
 
     ބަހުގެ މާނަ އަނބުރާ ދޭނެއެވެ
 
     &gt;&gt;&gt; get_definition(&#39;ތަންވަޅު&#39;)
-    &#39;ނ. 1 ދަނޑިވަޅު. 2 ފުރުޞަތު. 3 ވަގުތު.&#39;
+    [&#39;1. ދަނޑިވަޅު.&#39;, &#39;2. ފުރުޞަތު.&#39;, &#39;3. ވަގުތު.&#39;]
+
+    As seen in the above example where the, there are some problems when
+    displaying dhivehi text in a list. It starts out correctly then switches to
+    right to left orientation midway. This is only a display bug as when printed
+    separately, the output is correct.
+
+    &gt;&gt;&gt; for i in dictionary.get_definition(&#39;ތަންވަޅު&#39;):
+    ...     print(i)
+    1. ދަނޑިވަޅު.
+    2. ފުރުޞަތު.
+    3. ވަގުތު.
     &#34;&#34;&#34;
     con = _db_connect()
     cursor = con.cursor()
     query = f&#34;SELECT definition FROM radheef WHERE word=&#39;{word}&#39;&#34;
     cursor.execute(query)
-    definition = cursor.fetchone()
+    result = cursor.fetchone()
     con.close()
-    if definition is None:
-        return
-    return definition[0]
+    if result is None:
+        return []
+    definitions = result[0].split(&#34;\n&#34;)
+    return definitions
 
 
 def get_wordlist() -&gt; list:
@@ -79,35 +91,57 @@ def get_wordlist() -&gt; list:
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
 <dt id="dhivehi_nlp.dictionary.get_definition"><code class="name flex">
-<span>def <span class="ident">get_definition</span></span>(<span>word: str) ‑> str</span>
+<span>def <span class="ident">get_definition</span></span>(<span>word: str) ‑> list</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Returns meaning of word.</p>
+<div class="desc"><p>Returns definitions of word as a list. Returns empty list if not found.</p>
 <p>ބަހުގެ މާނަ އަނބުރާ ދޭނެއެވެ</p>
 <pre><code class="language-python-repl">&gt;&gt;&gt; get_definition('ތަންވަޅު')
-'ނ. 1 ދަނޑިވަޅު. 2 ފުރުޞަތު. 3 ވަގުތު.'
+['1. ދަނޑިވަޅު.', '2. ފުރުޞަތު.', '3. ވަގުތު.']
+</code></pre>
+<p>As seen in the above example where the, there are some problems when
+displaying dhivehi text in a list. It starts out correctly then switches to
+right to left orientation midway. This is only a display bug as when printed
+separately, the output is correct.</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; for i in dictionary.get_definition('ތަންވަޅު'):
+...     print(i)
+1. ދަނޑިވަޅު.
+2. ފުރުޞަތު.
+3. ވަގުތު.
 </code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def get_definition(word: str) -&gt; str:
-    &#34;&#34;&#34;Returns meaning of word.
+<pre><code class="python">def get_definition(word: str) -&gt; list:
+    &#34;&#34;&#34;Returns definitions of word as a list. Returns empty list if not found.
 
     ބަހުގެ މާނަ އަނބުރާ ދޭނެއެވެ
 
     &gt;&gt;&gt; get_definition(&#39;ތަންވަޅު&#39;)
-    &#39;ނ. 1 ދަނޑިވަޅު. 2 ފުރުޞަތު. 3 ވަގުތު.&#39;
+    [&#39;1. ދަނޑިވަޅު.&#39;, &#39;2. ފުރުޞަތު.&#39;, &#39;3. ވަގުތު.&#39;]
+
+    As seen in the above example where the, there are some problems when
+    displaying dhivehi text in a list. It starts out correctly then switches to
+    right to left orientation midway. This is only a display bug as when printed
+    separately, the output is correct.
+
+    &gt;&gt;&gt; for i in dictionary.get_definition(&#39;ތަންވަޅު&#39;):
+    ...     print(i)
+    1. ދަނޑިވަޅު.
+    2. ފުރުޞަތު.
+    3. ވަގުތު.
     &#34;&#34;&#34;
     con = _db_connect()
     cursor = con.cursor()
     query = f&#34;SELECT definition FROM radheef WHERE word=&#39;{word}&#39;&#34;
     cursor.execute(query)
-    definition = cursor.fetchone()
+    result = cursor.fetchone()
     con.close()
-    if definition is None:
-        return
-    return definition[0]</code></pre>
+    if result is None:
+        return []
+    definitions = result[0].split(&#34;\n&#34;)
+    return definitions</code></pre>
 </details>
 </dd>
 <dt id="dhivehi_nlp.dictionary.get_wordlist"><code class="name flex">
