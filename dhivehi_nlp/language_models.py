@@ -92,8 +92,8 @@ def news_model_predict(word: str, max_output=10) -> list:
     descending order.
     The max_output keyword argument determines the size of the return list and
     is set to 10 by default if argument is not given.
-    If there are no bigrams containing the input word as the first word, None is
-    returned.
+    If there are no bigrams containing the input word as the first word, an
+    empty list is returned.
 
     ސަން އެމްވީގެ ހަބަރު ތަކުން ހަދާފައިވާ މޮޑެލް ބޭނުން ކޮށްގެން، ދީފައިވާ އަކުރަށްފަހު އަންނާނެ އަކުރު ލަފާ ކުރާނެ އެވެ
 
